@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #text {
+      padding: 10px;
+      border: solid 1px #888;
+      font-size: 20px;
+    }
+
+    input {
+      margin: 10px 0px;
+      font-size: 18px;
+      padding: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    p {
+      color: red;
+      font-size: 18px;
+    }
+
+    #inputed {
+      color: #000;
+    }
+
+    .word {
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="text"></div>
+  <p>Đã nhập: <span id="inputed"></span></p>
+  <input type="text" name="" id="input" autocomplete="off">
+  <div>
+    <span>Đúng:</span>
+    <span id="result-true"></span>
+  </div>
+  <div>
+    <span>Sai:</span>
+    <span id="result-false"></span>
+  </div>
+  <p>Thời gian: <span id="time"></span></p>
+</body>
+<script src="js.js"></script>
+
+</html>
