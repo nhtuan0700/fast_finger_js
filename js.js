@@ -1,10 +1,9 @@
 var listParagraph = [
-  "ba thuong con vi con giong me me di vang me di vang con sang choi nha ba",
-  "mot hai ba bon nam sau bay tam chin muoi",
-  "hom nay se hoc lop lap trinh php hoc lap trinh vui that",
-  "hay trao cho anh hay trao cho anh thu anh dang mong u hu"
+  "hai con thằng lằn con đùa nhau cắn nhau đứt con chym non",
+  "ba thương con vì con giống mẹ đi vắng con sang chơi nhà bà í a í a",
+  "một hai ba bốn năm sáu bảy tám chín mười"
 ]
-
+var indexArr;
 var paragraph;
 var eWordGiven = document.getElementsByClassName("word");
 var eText = document.getElementById("text");
@@ -16,7 +15,7 @@ var eTime = document.getElementById("time");
 var eResult = document.getElementById("result");
 
 function randomParagraph(listParagraph) {
-  var result = listParagraph[Math.floor(Math.random() * listParagraph.length)];
+  let result = listParagraph[Math.floor(Math.random() * listParagraph.length)];
   return result;
 }
 // Khoi tao
@@ -28,7 +27,7 @@ function init() {
 }
 
 function loadParagraph(string) {
-  var arrWord = string.split(' ');
+  let arrWord = string.split(' ');
   for(let i = 0; i < arrWord.length; i++) {
     eText.innerHTML += '<span class="word">' + arrWord[i] + '</span>'
   }
@@ -49,12 +48,15 @@ eInputText.addEventListener('keydown', checkWord);
 
 
 function checkWord(e) {
+  let SPACE_KEY = " ";
   let arrWord = paragraph.split(' '); // Tách chuỗi
   let valueInput = eInputText.value;
   let cTrue = parseInt(eResultTrue.innerText);
   let cFalse = parseInt(eResultFalse.innerText);
+  // console.log(e);
 
-  if (e.keyCode === 32) {
+  // e.keyCode: wee->lỗi
+  if (e.key === SPACE_KEY) {
     eInputed.innerText += valueInput; // Hiển thị đoạn input đã nhập
     
     // Trước khi ô input reset thì dấu cách vẫn còn 
@@ -104,9 +106,9 @@ function startNewParagraph() {
 
 function runTime(seconds) {
   startNewParagraph();
-  var i = seconds;
+  let i = seconds;
   eTime.innerText = seconds;
-  var intervalID = setInterval(function(){
+  let intervalID = setInterval(function(){
     eTime.innerText = --i;
     if(i === 0) {
       clearInterval(intervalID);
@@ -115,4 +117,4 @@ function runTime(seconds) {
   },1000);
 }
 
-runTime(15);
+runTime(35);
